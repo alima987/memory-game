@@ -49,13 +49,13 @@ function unflipCards() {
 function resetCards() {
     [isFlipped, lockCard] = [false, false];
     [firstCard, secondCard] = [null, null];
-}
+};
 
 (function shuffle() {
     memoryCards.forEach((card) => {
         let randomCard = Math.floor(Math.random() * 20);
         card.style.order = randomCard;
-    })
+    });
 }) ();
 
 memoryCards.forEach(card => card.addEventListener('click', flipCard));

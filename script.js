@@ -55,8 +55,8 @@ function resetCards() {
     memoryCards.forEach((card) => {
         let randomCard = Math.floor(Math.random() * 20);
         card.style.order = randomCard;
-    });
-}) ();
+    })
+}) ()
 
 memoryCards.forEach(card => card.addEventListener('click', flipCard));
 

@@ -1,4 +1,4 @@
-const memoryCards = document.querySelectorAll('.memory-card'); // Обратите внимание на исправленный селектор
+const memoryCards = document.querySelectorAll('.memory-card'); 
 let isFlipped = false;
 let lockCard = false;
 let firstCard, secondCard;
@@ -43,13 +43,20 @@ function unflipCards() {
         secondCard.classList.remove('flip');
 
         resetCards();
-    }, 1000); // Уменьшил задержку до 1000 миллисекунд (1 секунда)
+    }, 1000); 
 }
 
 function resetCards() {
     [isFlipped, lockCard] = [false, false];
     [firstCard, secondCard] = [null, null];
 }
+
+(function shuffle() {
+    memoryCards.forEach((card) => {
+        let randomCard = Math.floor(Math.random() * 20);
+        card.style.order = randomCard;
+    })
+}) ();
 
 memoryCards.forEach(card => card.addEventListener('click', flipCard));
 
